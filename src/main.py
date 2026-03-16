@@ -31,7 +31,7 @@ async def on_ready():
 
 @bot.event
 async def on_command_error(ctx, error):
-    if error == commands.CommandNotFound:
+    if isinstance(error, commands.CommandNotFound):
         pass
     else:
         embed = make_embed(
